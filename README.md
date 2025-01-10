@@ -1,6 +1,6 @@
 ### Hola por este lado te dejo el cuestionario resuelto en lo que respondi
 ---
-#CUESTIONARIO
+# CUESTIONARIO
 
 ## 1. ¿Para que funciona el BoxCollider?
    R/ el box collider nos ayuda dandole un cuerpo fisico en donde puede colisionar de manera real como un objeto o donde conecte con su espacio para poder realizar  ejemplos HItBox o golpes como en juegos de pelea. es primpordial cuando un objeto que queremos comprobar o que queremos que haga algo como OnTriggerEnter nos de un evento cuando colisiona con otros objetos
