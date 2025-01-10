@@ -1,10 +1,10 @@
-#Hola por este lado te dejo el cuestionario resuelto en lo que respondi
+# Hola por este lado te dejo el cuestionario resuelto en lo que respondi
 CUESTIONARIO
 
-##1. ¿Para que funciona el BoxCollider?
+## 1. ¿Para que funciona el BoxCollider?
    R/ el box collider nos ayuda dandole un cuerpo fisico en donde puede colisionar de manera real como un objeto o donde conecte con su espacio para poder realizar  ejemplos HItBox o golpes como en juegos de pelea. es primpordial cuando un objeto que queremos comprobar o que queremos que haga algo como OnTriggerEnter nos de un evento cuando colisiona con otros objetos
 
-##3. ¿Qué funcionalidad tienen los Prefabs?
+## 3. ¿Qué funcionalidad tienen los Prefabs?
   Como su nombre lo dice son prefabricados que creamos para tener un modelo con una configuracion predeterminada a la hora de agregarlo en la escena, y su funcion 
 ## 4. ¿Qué rol cumplen los enum en C#?
 son un tipo de dato que nos puede crear un conjunto de variables nuevas individuales, ejemplo 
