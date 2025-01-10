@@ -26,7 +26,7 @@ public class PrecioVentaCalculator : MonoBehaviour
         valorCorrectoUtilidadEsperada = (utilidad * valorCorrectoCostoTotal) / 100;
         valorCorrectoPrecioVenta = valorCorrectoCostoTotal + valorCorrectoUtilidadEsperada;
     }
-    private bool AreAlmostEqual(float a, float b, float epsilon = 0.1f)
+    private bool AreAlmostEqual(float a, float b, float epsilon)
     {
         return Mathf.Abs(a - b) < epsilon;
     }
@@ -50,27 +50,14 @@ public class PrecioVentaCalculator : MonoBehaviour
         textoResultado1.text = "";
         textoResultado2.text = "";
         textoResultado3.text = "";
-        //Validar dato ingresado
-        if (!float.TryParse(costoTotalInput.text, out float costoTotalIngresado))
-        {
-            textoResultado1.text = "Entrada no válida.";
-            textoResultado1.color = Color.red;
-            return; // Salir del método si la entrada no es válida
-        }
-        if (!float.TryParse(costoTotalInput.text, out float utilidadEsperadaingresado))
-        {
-            textoResultado1.text = "Entrada no válida.";
-            textoResultado1.color = Color.red;
-            return; // Salir del método si la entrada no es válida
-        }
-        if (!float.TryParse(costoTotalInput.text, out float precioventaIngresado))
-        {
-            textoResultado1.text = "Entrada no válida.";
-            textoResultado1.color = Color.red;
-            return; // Salir del método si la entrada no es válida
-        }
+        // string en texto
+        float costoTotalIngresado = float.Parse(costoTotalInput.text);
+        float utilidadEsperadaingresado = float.Parse(utilidadEsperadainput.text);
+        float precioventaIngresado = float.Parse(precioventaInput.text);
+
+        float epsilon = 0.01f;
         // comprobar valores
-        if (AreAlmostEqual(costoTotalIngresado, valorCorrectoCostoTotal))
+        if (AreAlmostEqual(costoTotalIngresado, valorCorrectoCostoTotal, epsilon))
         {
             textoResultado1.text += "Costo total \n";
             textoResultado1.color = Color.green;
@@ -81,18 +68,18 @@ public class PrecioVentaCalculator : MonoBehaviour
             textoResultado1.color = Color.red;
         }
 
-        if (AreAlmostEqual(utilidadEsperadaingresado, valorCorrectoUtilidadEsperada))
+        if (AreAlmostEqual(utilidadEsperadaingresado, valorCorrectoUtilidadEsperada, epsilon))
         {
-            textoResultado2.text += "Costo total correcto.\n";
+            textoResultado2.text += "Utilidad total correcto.\n";
             textoResultado2.color = Color.green;
         }
         else
         {
-            textoResultado2.text += $"Costo correcto {valorCorrectoUtilidadEsperada}\n";
+            textoResultado2.text += $"Utilidad correcta {valorCorrectoUtilidadEsperada}\n";
             textoResultado2.color = Color.red;
         }
 
-        if (AreAlmostEqual(precioventaIngresado, valorCorrectoPrecioVenta))
+        if (AreAlmostEqual(precioventaIngresado, valorCorrectoPrecioVenta, epsilon))
         {
             textoResultado3.text += "Precio de venta correcto. \n";
             textoResultado3.color = Color.green;
